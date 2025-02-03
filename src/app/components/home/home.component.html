@@ -1,0 +1,21 @@
+
+<h1 class="text-center mt-3">Here are the top 20 movies of 2024</h1>
+<div class="container p-3">
+    <div class="row">
+        @for (movie of MoviesRes; track $index)
+         {
+            <div class="col-md-3 mb-3">
+              <div class="card text-start">
+                <img class="card-img-top" [src]="ImgFirst+movie.backdrop_path" [alt]="movie.title" />
+                <div class="card-body">
+                    <h4 class="card-title">{{movie.title ?? movie.name}}</h4>
+                    <p class="card-text">{{movie.release_date ?? movie.first_air_date}}</p>
+                    <p class="card-text">{{movie.overview}}</p>
+                </div>
+              </div>
+            </div>
+         }
+        
+    </div>
+</div>
+
